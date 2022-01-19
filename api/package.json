@@ -1,0 +1,34 @@
+{
+	"name": "test-ms.ms.pdf",
+	"version": "1.0.0",
+	"description": "Serverless aws-nodejs-typescript template",
+	"main": "serverless.ts",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"engines": {
+		"node": ">=14.15.0"
+	},
+	"dependencies": {
+		"@middy/core": "^2.5.6",
+		"@middy/do-not-wait-for-empty-event-loop": "^2.5.6",
+		"@middy/http-header-normalizer": "^2.5.6",
+		"@middy/http-json-body-parser": "^2.5.6",
+		"@middy/http-multipart-body-parser": "^2.5.6",
+		"aws-sdk": "^2.1058.0"
+	},
+	"devDependencies": {
+		"@serverless/typescript": "^2.23.0",
+		"@types/aws-lambda": "^8.10.71",
+		"@types/node": "^14.18.8",
+		"json-schema-to-ts": "^1.5.0",
+		"serverless": "^2.23.0",
+		"serverless-esbuild": "^1.17.1",
+		"serverless-offline": "^8.3.1",
+		"ts-node": "^9.1.1",
+		"tsconfig-paths": "^3.9.0",
+		"typescript": "^4.1.3"
+	},
+	"author": "The serverless webpack authors (https://github.com/elastic-coders/serverless-webpack)",
+	"license": "MIT"
+}

@@ -1,0 +1,15 @@
+{
+	"name": "ms-pdf",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"dev": "serverless-offline-multi --directory api --directory ms-pdf"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"serverless-offline-multi": "github:jhonpedro/serverless-offline-multi#remove-port-and-use-path-handling-paths"
+	}
+}
