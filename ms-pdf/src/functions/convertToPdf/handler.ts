@@ -1,5 +1,4 @@
 import type { ValidAPIGatewayHandler } from '@libs/apiGateway'
-import { formatJSONResponse } from '@libs/apiGateway'
 import { S3 } from 'aws-sdk'
 import { AWS_REGION, S3_BUCKET_NAME } from '../../../../constants'
 import { Browser } from 'puppeteer-core'
