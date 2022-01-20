@@ -4,12 +4,16 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"dev": "serverless-offline-multi --directory api --directory ms-pdf"
+		"dev": "serverless-offline-multi --directory api --directory ms-pdf",
+		"deploy": "cd ms-pdf && serverless deploy --stage prod && cd ../api && serverless deploy --stage prod"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"serverless-offline-multi": "github:jhonpedro/serverless-offline-multi#remove-port-and-use-path-handling-paths"
+	},
+	"devDependencies": {
+		"@types/node": "^17.0.10"
 	}
 }

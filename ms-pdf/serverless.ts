@@ -1,10 +1,10 @@
 import type { AWS } from '@serverless/typescript'
 
 import { convertToPdf } from '@functions/convertToPdf'
-import { AWS_REGION, S3_BUCKET_NAME } from '../constants'
+import { AWS_REGION, MS_PDF_SERVICE_NAME, S3_BUCKET_NAME } from '../constants'
 
 const serverlessConfiguration: AWS = {
-	service: 'test-ms-pdf',
+	service: MS_PDF_SERVICE_NAME,
 	frameworkVersion: '2',
 	useDotenv: true,
 	provider: {

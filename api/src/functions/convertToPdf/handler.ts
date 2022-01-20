@@ -47,6 +47,7 @@ export const convertDocx: ValidAPIGatewayHandler = async (event) => {
 		file_key: string
 	}
 
+	console.log(lambdaPayload)
 	if (!(lambdaPayload.statusCode >= 200 && lambdaPayload.statusCode < 300)) {
 		console.log(lambdaPayload)
 		return formatJSONResponse(500, {
@@ -54,7 +55,7 @@ export const convertDocx: ValidAPIGatewayHandler = async (event) => {
 		})
 	}
 
-	const presignedUrl = s3Client.getSignedUrlPromise('getObject', {
+	const presignedUrl = await s3Client.getSignedUrlPromise('getObject', {
 		Bucket: S3_BUCKET_NAME,
 		Key: lambdaPayload.file_key,
 		Expires: 60,

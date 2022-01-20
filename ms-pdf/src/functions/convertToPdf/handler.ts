@@ -12,7 +12,6 @@ export const handler: ValidAPIGatewayHandler = async (event) => {
 
 	let browser: Browser = null
 	try {
-		console.log(event)
 		const executablePath = process.env.IS_OFFLINE
 			? null
 			: await chromium.executablePath
@@ -53,14 +52,16 @@ export const handler: ValidAPIGatewayHandler = async (event) => {
 				Bucket: S3_BUCKET_NAME,
 				Key: pdf_key,
 				Body: pdfBuffer,
+				ContentType: 'application/pdf',
 			})
 			.promise()
 
-		return formatJSONResponse(200, {
+		return {
 			statusCode: 200,
 			file_key: pdf_key,
-		})
+		}
 	} catch (error) {
+		console.error(error)
 		return error
 	} finally {
 		if (browser !== null) {
